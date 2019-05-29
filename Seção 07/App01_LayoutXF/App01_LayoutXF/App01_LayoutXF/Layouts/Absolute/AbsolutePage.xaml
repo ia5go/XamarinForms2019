@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App01_LayoutXF.Layouts.Absolute.AbsolutePage">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <!-- AbsoluteLayout: 
+            - controla posição na tela e dimensões do elemento com coordendas de pixels
+            (assim como se faz com as formas em OpenGL e Processing)
+            - função para isso é AbsoluteLayout.LayoutBounds="X, Y, Width, Height"-->
+            <BoxView BackgroundColor="Blue"
+                     AbsoluteLayout.LayoutBounds="0, 0, 200, 100"/>
+            <BoxView BackgroundColor="Green"
+                     AbsoluteLayout.LayoutBounds="50, 50, 100, 100"/>
+            <BoxView BackgroundColor="Red"
+                     AbsoluteLayout.LayoutBounds="150, 150, 50, 50"/>
+            <!-- AbsoluteLayout.LayoutFlags: torna, a partir de uma flag, dimenções e/ou
+            coordenas proporcionais as dimenções da tela. Então a função LayoutBounds passa
+            a receber valores de 0-1 que indica a proporção de cada medida em relação
+            ao tamnho da tela-->
+            <BoxView BackgroundColor="Yellow"
+                     AbsoluteLayout.LayoutBounds="0, 400, 0.8, 100"
+                     AbsoluteLayout.LayoutFlags="WidthProportional"/>
+            <BoxView BackgroundColor="GreenYellow"
+                     AbsoluteLayout.LayoutBounds="300, 300, 0.5, 0.5"
+                     AbsoluteLayout.LayoutFlags="SizeProportional"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
